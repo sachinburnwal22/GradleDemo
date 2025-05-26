@@ -17,6 +17,7 @@ repositories {
 
 dependencies {
     // Use JUnit Jupiter for testing.
+    implementation("com.squareup.okhttp3:okhttp:4.12.0")
     testImplementation(libs.junit.jupiter)
 
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
