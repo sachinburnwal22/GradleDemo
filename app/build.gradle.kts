@@ -47,4 +47,10 @@ tasks.named<Jar>("jar") {
     manifest {
         attributes["Main-Class"] = "org.example.App"
     }
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    from({
+        configurations.runtimeClasspath.get().map { file ->
+            if (file.isDirectory) file else zipTree(file)
+        }
+    })
 }
